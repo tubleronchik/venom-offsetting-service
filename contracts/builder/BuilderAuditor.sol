@@ -1,6 +1,6 @@
 pragma solidity ^0.4.4;
-import 'creator/CreatorAuditor.sol';
-import 'builder/Builder.sol';
+import '../creator/CreatorAuditor.sol';
+import './builder/Builder.sol';
 
 /**
  * @title BuilderAuditor contract

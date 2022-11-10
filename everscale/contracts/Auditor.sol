@@ -1,11 +1,11 @@
 pragma ton-solidity 0.47.0;
-import 'token/TokenEmission.sol';
+import 'ERC20/ERC20Burnable.sol';
 import './InsuranceHolder.sol';
 import './Operated.sol';
 
 contract Auditor is Operated {
     // Operated token
-    TokenEmission public token;
+    ERC20Burnable public token;
 
     // Emission current value
     uint public emissionValue;
@@ -19,6 +19,8 @@ contract Auditor is Operated {
     // Address of insurance contract
     InsuranceHolder public insuranceHolder;
 
+    address public tokenOwner;
+
     /**
      * @dev Auditor contract constructor
      * @param _operator is an operator if this auditor
@@ -27,13 +29,15 @@ contract Auditor is Operated {
      */
     constructor(address _operator,
                      address _token,
-                     address _holder) Operated(_operator) public {
+                     address _holder,
+                     address _tokenOwner) Operated(_operator) public {
         // null check
         require(_operator != address(0) && _token != address(0) && _holder != address(0));
         tvm.accept();
 
-        token = TokenEmission(_token);
+        token = ERC20Burnable(_token);
         insuranceHolder = InsuranceHolder(_holder);
+        tokenOwner = _tokenOwner;
     }
 
     /**
@@ -82,5 +86,5 @@ contract Auditor is Operated {
      * @param _value is a transfer value
      */
     function transfer(uint _value) public onlyOwner
-    { token.transfer(token.owner(), _value); }
+    { token.transfer(tokenOwner, _value); }
 }

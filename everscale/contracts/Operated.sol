@@ -1,7 +1,6 @@
 pragma ton-solidity 0.47.0;
-import './common/Object.sol';
-
-contract Operated is Object {
+import './Owned.sol';
+contract Operated is Owned {
     // Contract operator
     address public operator;
 
