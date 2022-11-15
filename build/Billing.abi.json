@@ -1,0 +1,85 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_taxman","type":"address"},
+				{"name":"_beneficiary","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "serviceFee",
+			"inputs": [
+				{"name":"_account","type":"address"},
+				{"name":"_fee","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "payment",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setOwner",
+			"inputs": [
+				{"name":"_owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "owner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"owner","type":"address"}
+			]
+		},
+		{
+			"name": "taxman",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"taxman","type":"address"}
+			]
+		},
+		{
+			"name": "beneficiary",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"beneficiary","type":"address"}
+			]
+		},
+		{
+			"name": "balances",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"balances","type":"map(address,int256)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"owner","type":"address"},
+		{"name":"taxman","type":"address"},
+		{"name":"beneficiary","type":"address"},
+		{"name":"balances","type":"map(address,int256)"}
+	]
+}

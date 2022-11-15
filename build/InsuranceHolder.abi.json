@@ -1,0 +1,124 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_operator","type":"address"},
+				{"name":"_token","type":"address"},
+				{"name":"_tokenOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "size",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "record",
+			"inputs": [
+				{"name":"_index","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"},
+				{"name":"value1","type":"uint256"},
+				{"name":"value2","type":"bool"}
+			]
+		},
+		{
+			"name": "setHoldDuration",
+			"inputs": [
+				{"name":"_duration_sec","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transfer",
+			"inputs": [
+				{"name":"_value","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"_index","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setOwner",
+			"inputs": [
+				{"name":"_owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "owner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"owner","type":"address"}
+			]
+		},
+		{
+			"name": "operator",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"operator","type":"address"}
+			]
+		},
+		{
+			"name": "token",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"token","type":"address"}
+			]
+		},
+		{
+			"name": "tokenOwner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"tokenOwner","type":"address"}
+			]
+		},
+		{
+			"name": "holdDuration",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"holdDuration","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"owner","type":"address"},
+		{"name":"operator","type":"address"},
+		{"name":"token","type":"address"},
+		{"name":"tokenOwner","type":"address"},
+		{"name":"holdDuration","type":"uint256"},
+		{"components":[{"name":"timestamp","type":"uint256"},{"name":"value","type":"uint256"},{"name":"closed","type":"bool"}],"name":"values","type":"tuple[]"}
+	]
+}

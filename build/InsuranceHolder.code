@@ -1,0 +1,874 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+ENDS
+PUSH S2
+.loc ../contracts/Operated.sol, 12
+ACCEPT
+.loc ../contracts/Operated.sol, 13
+SETGLOB 11
+.loc ../contracts/InsuranceHolder.sol, 46
+PUSH S2
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+NOT
+PUSH S2
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+AND
+THROWIFNOT 100
+.loc ../contracts/InsuranceHolder.sol, 48
+ACCEPT
+.loc ../contracts/InsuranceHolder.sol, 50
+ROT
+SETGLOB 11
+.loc ../contracts/InsuranceHolder.sol, 51
+SWAP
+SETGLOB 12
+.loc ../contracts/InsuranceHolder.sol, 52
+SETGLOB 13
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro size
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/InsuranceHolder.sol, 26
+ENDS
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $size_949d225d_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2225896160
+	STUR 130
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	size_949d225d_internal
+.type	size_949d225d_internal, @function
+CALL $size_949d225d_internal_macro$
+
+.macro size_949d225d_internal_macro
+.loc ../contracts/InsuranceHolder.sol, 27
+GETGLOB 15
+FIRST
+.loc ../contracts/InsuranceHolder.sol, 0
+
+.macro record
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/InsuranceHolder.sol, 34
+LDU 256
+ENDS
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $record_2c16cd8a_internal_macro$
+}
+PUSH S3
+PUSHCONT {
+	PUSH S5
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 1
+	STUR 98
+	REVERSE 4, 0
+	NEWC
+	STSLICECONST x8d08ed87
+	STU 256
+	STU 256
+	STI 1
+	STBREFR
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	BLKDROP 3
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	record_2c16cd8a_internal
+.type	record_2c16cd8a_internal, @function
+CALL $record_2c16cd8a_internal_macro$
+
+.macro record_2c16cd8a_internal_macro
+.loc ../contracts/InsuranceHolder.sol, 35
+GETGLOB 15
+SECOND
+PUSHINT 32
+DICTUGET
+THROWIFNOT 50
+CALLREF {
+	LDU 256
+	LDU 256
+	LDI 1
+	ENDS
+	TRIPLE
+}
+.loc ../contracts/InsuranceHolder.sol, 36
+DUP
+FIRST
+OVER
+SECOND
+ROT
+THIRD
+.loc ../contracts/InsuranceHolder.sol, 0
+
+.macro setHoldDuration
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/InsuranceHolder.sol, 59
+LDU 256
+ENDS
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $setHoldDuration_30eb4ba8_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setHoldDuration_30eb4ba8_internal
+.type	setHoldDuration_30eb4ba8_internal, @function
+CALL $setHoldDuration_30eb4ba8_internal_macro$
+
+.macro setHoldDuration_30eb4ba8_internal_macro
+.loc ../contracts/Operated.sol, 16
+GETGLOB 9
+GETGLOB 11
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/InsuranceHolder.sol, 60
+SETGLOB 14
+.loc ../contracts/InsuranceHolder.sol, 0
+
+.macro transfer
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/InsuranceHolder.sol, 65
+LDU 256
+ENDS
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $transfer_12514bba_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3238737909
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	transfer_12514bba_internal
+.type	transfer_12514bba_internal, @function
+CALL $transfer_12514bba_internal_macro$
+
+.macro transfer_12514bba_internal_macro
+.loc ../contracts/InsuranceHolder.sol, 66
+DUP
+MYADDR
+GETGLOB 9
+GETGLOB 12
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 9789369574394656757036770681243717074945
+STUR 135
+ROLLREV 3
+NEWC
+STSLICECONST x029f75c5
+STSLICE
+ROTREV
+NEWC
+STSLICE
+STU 256
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/InsuranceHolder.sol, 67
+GETGLOB 15
+NOW
+ROT
+FALSE
+TRIPLE
+CALLREF {
+	UNTRIPLE
+	XCHG S2
+	NEWC
+	STU 256
+	STU 256
+	STI 1
+}
+SWAP
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETB
+PAIR
+SETGLOB 15
+.loc ../contracts/InsuranceHolder.sol, 68
+TRUE
+.loc ../contracts/InsuranceHolder.sol, 0
+
+.macro withdraw
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/InsuranceHolder.sol, 77
+LDU 256
+ENDS
+.loc ../contracts/InsuranceHolder.sol, 0
+CALLREF {
+	CALL $withdraw_2e1a7d4d_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	withdraw_2e1a7d4d_internal
+.type	withdraw_2e1a7d4d_internal, @function
+CALL $withdraw_2e1a7d4d_internal_macro$
+
+.macro withdraw_2e1a7d4d_internal_macro
+.loc ../contracts/InsuranceHolder.sol, 78
+GETGLOB 15
+SECOND
+PUSHINT 32
+DICTUGET
+THROWIFNOT 50
+CALLREF {
+	LDU 256
+	LDU 256
+	LDI 1
+	ENDS
+	TRIPLE
+}
+.loc ../contracts/InsuranceHolder.sol, 81
+DUP
+THIRD
+THROWIF 100
+.loc ../contracts/InsuranceHolder.sol, 84
+GETGLOB 9
+GETGLOB 11
+SDEQ
+PUSHCONT {
+	.loc ../contracts/InsuranceHolder.sol, 85
+	DUP
+	SECOND
+	GETGLOB 11
+	GETGLOB 12
+	NEWC
+	STSLICECONST x62_
+	STSLICE
+	PUSHINT 9789369574394656757036770681243717074945
+	STUR 135
+	ROTREV
+	NEWC
+	STSLICECONST x09234689
+	STSLICE
+	STU 256
+	STBREFR
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/InsuranceHolder.sol, 86
+	TRUE
+	SETINDEX 2
+	.loc ../contracts/InsuranceHolder.sol, 87
+	DROP
+	.loc ../contracts/InsuranceHolder.sol, 0
+}
+IFJMP
+.loc ../contracts/InsuranceHolder.sol, 91
+GETGLOB 9
+GETGLOB 13
+SDEQ
+PUSHCONT {
+	.loc ../contracts/InsuranceHolder.sol, 92
+	DUP
+	FIRST
+	GETGLOB 14
+	ADD
+	NOW
+	LEQ
+	THROWIFNOT 100
+	.loc ../contracts/InsuranceHolder.sol, 94
+	DUP
+	SECOND
+	GETGLOB 13
+	GETGLOB 12
+	NEWC
+	STSLICECONST x62_
+	STSLICE
+	PUSHINT 9789369574394656757036770681243717074945
+	STUR 135
+	ROTREV
+	NEWC
+	STSLICECONST x09234689
+	STSLICE
+	STU 256
+	STBREFR
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/InsuranceHolder.sol, 95
+	TRUE
+	SETINDEX 2
+	.loc ../contracts/InsuranceHolder.sol, 96
+	DROP
+	.loc ../contracts/InsuranceHolder.sol, 0
+}
+IFJMP
+.loc ../contracts/InsuranceHolder.sol, 100
+DROP
+THROW 100
+.loc ../contracts/InsuranceHolder.sol, 0
+
+.macro setOwner
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Owned.sol, 16
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+ENDS
+.loc ../contracts/Owned.sol, 0
+CALLREF {
+	CALL $setOwner_13af4035_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setOwner_13af4035_internal
+.type	setOwner_13af4035_internal, @function
+CALL $setOwner_13af4035_internal_macro$
+
+.macro setOwner_13af4035_internal_macro
+.loc ../contracts/Owned.sol, 22
+GETGLOB 9
+GETGLOB 10
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Owned.sol, 17
+SETGLOB 10
+.loc ../contracts/Owned.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDU 256
+LDU 32
+LDDICT
+ROTREV
+PAIR
+SWAP
+ENDS
+SETGLOB 15
+SETGLOB 14
+SETGLOB 13
+SETGLOB 12
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	BLKPUSH 3, 0
+	PUSHINT 0
+	DUP
+	NEWDICT
+	PAIR
+	SETGLOB 15
+	SETGLOB 14
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 15
+GETGLOB 14
+GETGLOB 13
+GETGLOB 12
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STSLICE
+ROLLREV 5
+NEWC
+STSLICE
+ROLLREV 4
+NEWC
+STSLICE
+ROLLREV 3
+NEWC
+STSLICE
+STU 256
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+STBREFR
+STBREFR
+STBREFR
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+LDU 4 ; bounced tail
+LDMSGADDR ; bounced src tail
+DROP
+SETGLOB 9
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SETGLOB 9
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	ROT
+	GETGLOB 2
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+IF
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro owner
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 10
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000df0bcfde
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro operator
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 11
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000fe2032e1
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro token
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 12
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000e270cc50
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro tokenOwner
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 13
+OVER
+PUSHCONT {
+	PUSHSLICE xc00000000000000000000000009073a27d
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro holdDuration
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 14
+OVER
+PUSHCONT {
+	PUSHSLICE xc000000000000000000000000090be4d93
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro public_function_selector
+DUP
+PUSHINT 280907155
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 78412512
+	EQUAL
+	IFJMPREF {
+		CALL $size$
+	}
+	DUP
+	PUSHINT 218688903
+	EQUAL
+	IFJMPREF {
+		CALL $record$
+	}
+	DUP
+	PUSHINT 276013693
+	EQUAL
+	IFJMPREF {
+		CALL $tokenOwner$
+	}
+	DUP
+	PUSHINT 280907155
+	EQUAL
+	IFJMPREF {
+		CALL $holdDuration$
+	}
+}
+DUP
+PUSHINT 1651559504
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 663198384
+	EQUAL
+	IFJMPREF {
+		CALL $withdraw$
+	}
+	DUP
+	PUSHINT 1091254261
+	EQUAL
+	IFJMPREF {
+		CALL $transfer$
+	}
+	DUP
+	PUSHINT 1594609630
+	EQUAL
+	IFJMPREF {
+		CALL $owner$
+	}
+	DUP
+	PUSHINT 1651559504
+	EQUAL
+	IFJMPREF {
+		CALL $token$
+	}
+}
+DUP
+PUSHINT 2116039393
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1802285830
+	EQUAL
+	IFJMPREF {
+		CALL $setOwner$
+	}
+	DUP
+	PUSHINT 1824563769
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 1998471647
+	EQUAL
+	IFJMPREF {
+		CALL $setHoldDuration$
+	}
+	DUP
+	PUSHINT 2116039393
+	EQUAL
+	IFJMPREF {
+		CALL $operator$
+	}
+}
+
