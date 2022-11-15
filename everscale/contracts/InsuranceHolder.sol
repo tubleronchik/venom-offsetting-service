@@ -1,11 +1,12 @@
 pragma ton-solidity 0.47.0;
-import 'token/Token.sol';
+import './ERC20/ERC20.sol';
 import './Operated.sol';
 
 contract InsuranceHolder is Operated {
 
     // Issuer token address
-    Token public token;
+    ERC20 public token;
+    address public tokenOwner;
 
     // Hold duration
     uint public holdDuration;
@@ -40,14 +41,15 @@ contract InsuranceHolder is Operated {
      * @param _operator is an operator address
      * @param _token is an associated token address
      */
-    constructor(address _operator, address _token) public Operated(_operator) {
+    constructor(address _operator, address _token, address _tokenOwner) public Operated(_operator) {
         // null check
         require(_operator != address(0) && _token == address(0));
 
         tvm.accept();
 
         operator = _operator;
-        token = Token(_token);
+        token = ERC20(_token);
+        tokenOwner = _tokenOwner;
     }
 
     /**
@@ -86,10 +88,10 @@ contract InsuranceHolder is Operated {
         }
 
         // Issuer case
-        if (msg.sender == token.owner()) {
+        if (msg.sender == tokenOwner) {
             require(rec.timestamp + holdDuration <= now);
 
-            token.transfer(token.owner(), rec.value);
+            token.transfer(tokenOwner, rec.value);
             rec.closed = true;
             return;
         }
