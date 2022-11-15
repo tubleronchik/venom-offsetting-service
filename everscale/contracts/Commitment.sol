@@ -32,6 +32,7 @@ contract Commitment is Operated {
                      address _insuranceHolderToken,
                      address _tokenEmissionOwner) public Operated(_operator) {
         // null check
+        tvm.accept();
         require(_operator != address(0) && _token != address(0) && _holder != address(0));
 
         tokenEmission = ERC20Burnable(_token);
