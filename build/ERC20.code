@@ -15,18 +15,20 @@ LDU 8
 LDU 256
 ENDS
 .loc ../contracts/ERC20/ERC20.sol, 22
+ACCEPT
+.loc ../contracts/ERC20/ERC20.sol, 23
 ROLL 3
 SETGLOB 12
-.loc ../contracts/ERC20/ERC20.sol, 23
+.loc ../contracts/ERC20/ERC20.sol, 24
 ROT
 SETGLOB 13
-.loc ../contracts/ERC20/ERC20.sol, 24
+.loc ../contracts/ERC20/ERC20.sol, 25
 SWAP
 SETGLOB 14
-.loc ../contracts/ERC20/ERC20.sol, 25
+.loc ../contracts/ERC20/ERC20.sol, 26
 DUP
 SETGLOB 10
-.loc ../contracts/ERC20/ERC20.sol, 26
+.loc ../contracts/ERC20/ERC20.sol, 27
 GETGLOB 9
 GETGLOB 15
 ROT
@@ -51,7 +53,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 34
+.loc ../contracts/ERC20/ERC20.sol, 35
 LDU 32
 GETGLOB 4
 ROT
@@ -129,7 +131,7 @@ THROW 0
 CALL $balanceOf_70a08231_internal_macro$
 
 .macro balanceOf_70a08231_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 35
+.loc ../contracts/ERC20/ERC20.sol, 36
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -157,7 +159,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 43
+.loc ../contracts/ERC20/ERC20.sol, 44
 OVER
 PUSHCONT {
 	LDREF
@@ -207,7 +209,7 @@ THROW 0
 CALL $allowance_dd62ed3e_internal_macro$
 
 .macro allowance_dd62ed3e_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 44
+.loc ../contracts/ERC20/ERC20.sol, 45
 SWAP
 GETGLOB 16
 PUSHINT 267
@@ -237,7 +239,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 53
+.loc ../contracts/ERC20/ERC20.sol, 54
 OVER
 PUSHCONT {
 	LDREF
@@ -285,7 +287,7 @@ THROW 0
 CALL $transfer_a9059cbb_internal_macro$
 
 .macro transfer_a9059cbb_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 54
+.loc ../contracts/ERC20/ERC20.sol, 55
 GETGLOB 9
 GETGLOB 15
 PUSHINT 267
@@ -298,7 +300,7 @@ IF
 OVER
 GEQ
 PUSHCONT {
-	.loc ../contracts/ERC20/ERC20.sol, 55
+	.loc ../contracts/ERC20/ERC20.sol, 56
 	DUP
 	GETGLOB 9
 	GETGLOB 15
@@ -319,7 +321,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 15
-	.loc ../contracts/ERC20/ERC20.sol, 56
+	.loc ../contracts/ERC20/ERC20.sol, 57
 	PUSH2 S0, S1
 	GETGLOB 15
 	DUP2
@@ -338,7 +340,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 15
-	.loc ../contracts/ERC20/ERC20.sol, 57
+	.loc ../contracts/ERC20/ERC20.sol, 58
 	SWAP
 	GETGLOB 9
 	PUSHSLICE xc0000000000000000000000001
@@ -357,12 +359,12 @@ PUSHCONT {
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
-	.loc ../contracts/ERC20/ERC20.sol, 58
+	.loc ../contracts/ERC20/ERC20.sol, 59
 	TRUE
 	.loc ../contracts/ERC20/ERC20.sol, 0
 }
 IFJMP
-.loc ../contracts/ERC20/ERC20.sol, 60
+.loc ../contracts/ERC20/ERC20.sol, 61
 DROP2
 FALSE
 .loc ../contracts/ERC20/ERC20.sol, 0
@@ -376,7 +378,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 71
+.loc ../contracts/ERC20/ERC20.sol, 72
 OVER
 PUSHCONT {
 	LDREF
@@ -428,7 +430,7 @@ THROW 0
 CALL $transferFrom_23b872dd_internal_macro$
 
 .macro transferFrom_23b872dd_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 72
+.loc ../contracts/ERC20/ERC20.sol, 73
 GETGLOB 9
 PUSH S3
 GETGLOB 16
@@ -491,11 +493,11 @@ PUSHCONT {
 	IF
 }
 IFELSE
-.loc ../contracts/ERC20/ERC20.sol, 75
+.loc ../contracts/ERC20/ERC20.sol, 76
 OVER
 GEQ
 PUSHCONT {
-	.loc ../contracts/ERC20/ERC20.sol, 76
+	.loc ../contracts/ERC20/ERC20.sol, 77
 	PUSH2 S0, S2
 	GETGLOB 16
 	DUP2
@@ -532,7 +534,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 16
-	.loc ../contracts/ERC20/ERC20.sol, 77
+	.loc ../contracts/ERC20/ERC20.sol, 78
 	PUSH2 S0, S2
 	GETGLOB 15
 	DUP2
@@ -552,7 +554,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 15
-	.loc ../contracts/ERC20/ERC20.sol, 78
+	.loc ../contracts/ERC20/ERC20.sol, 79
 	PUSH2 S0, S1
 	GETGLOB 15
 	DUP2
@@ -571,7 +573,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 15
-	.loc ../contracts/ERC20/ERC20.sol, 79
+	.loc ../contracts/ERC20/ERC20.sol, 80
 	XCHG S2
 	PUSHSLICE xc0000000000000000000000001
 	NEWC
@@ -589,12 +591,12 @@ PUSHCONT {
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
-	.loc ../contracts/ERC20/ERC20.sol, 80
+	.loc ../contracts/ERC20/ERC20.sol, 81
 	TRUE
 	.loc ../contracts/ERC20/ERC20.sol, 0
 }
 IFJMP
-.loc ../contracts/ERC20/ERC20.sol, 82
+.loc ../contracts/ERC20/ERC20.sol, 83
 BLKDROP 3
 FALSE
 .loc ../contracts/ERC20/ERC20.sol, 0
@@ -608,7 +610,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 90
+.loc ../contracts/ERC20/ERC20.sol, 91
 OVER
 PUSHCONT {
 	LDREF
@@ -656,7 +658,7 @@ THROW 0
 CALL $approve_095ea7b3_internal_macro$
 
 .macro approve_095ea7b3_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 91
+.loc ../contracts/ERC20/ERC20.sol, 92
 DUP
 GETGLOB 9
 GETGLOB 16
@@ -692,7 +694,7 @@ ROTREV
 PUSHINT 267
 DICTSETB
 SETGLOB 16
-.loc ../contracts/ERC20/ERC20.sol, 92
+.loc ../contracts/ERC20/ERC20.sol, 93
 SWAP
 GETGLOB 9
 PUSHSLICE xc0000000000000000000000001
@@ -711,7 +713,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/ERC20/ERC20.sol, 93
+.loc ../contracts/ERC20/ERC20.sol, 94
 TRUE
 .loc ../contracts/ERC20/ERC20.sol, 0
 
@@ -724,7 +726,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/ERC20/ERC20.sol, 100
+.loc ../contracts/ERC20/ERC20.sol, 101
 OVER
 PUSHCONT {
 	LDREF
@@ -749,7 +751,7 @@ THROW 0
 CALL $unapprove_fbf1f78a_internal_macro$
 
 .macro unapprove_fbf1f78a_internal_macro
-.loc ../contracts/ERC20/ERC20.sol, 101
+.loc ../contracts/ERC20/ERC20.sol, 102
 GETGLOB 9
 GETGLOB 16
 DUP2

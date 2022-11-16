@@ -19,6 +19,7 @@ contract ERC20 is IERC20, Owned {
 
     /* Token constructor */
     constructor(string _name, string _symbol, uint8 _decimals, uint256 _count) public {
+        tvm.accept();
         name        = _name;
         symbol      = _symbol;
         decimals    = _decimals;

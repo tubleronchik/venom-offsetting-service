@@ -24,10 +24,10 @@ LDMSGADDR
 ENDS
 .loc ../contracts/Billing.sol, 10
 ACCEPT
-.loc ../contracts/Billing.sol, 12
+.loc ../contracts/Billing.sol, 11
 SWAP
 SETGLOB 11
-.loc ../contracts/Billing.sol, 13
+.loc ../contracts/Billing.sol, 12
 SETGLOB 12
 .loc ../contracts/Billing.sol, 0
 CALLREF {
@@ -44,7 +44,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Billing.sol, 21
+.loc ../contracts/Billing.sol, 20
 OVER
 PUSHCONT {
 	LDREF
@@ -70,12 +70,12 @@ THROW 0
 CALL $serviceFee_81edaae4_internal_macro$
 
 .macro serviceFee_81edaae4_internal_macro
-.loc ../contracts/Billing.sol, 22
+.loc ../contracts/Billing.sol, 21
 GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 100
-.loc ../contracts/Billing.sol, 23
+.loc ../contracts/Billing.sol, 22
 FITS 256
 SWAP
 GETGLOB 13
@@ -107,7 +107,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Billing.sol, 29
+.loc ../contracts/Billing.sol, 28
 ENDS
 .loc ../contracts/Billing.sol, 0
 CALLREF {
@@ -124,7 +124,7 @@ THROW 0
 CALL $payment_42f6487a_internal_macro$
 
 .macro payment_42f6487a_internal_macro
-.loc ../contracts/Billing.sol, 30
+.loc ../contracts/Billing.sol, 29
 DEPTH
 ADDCONST -2
 PICK
@@ -139,7 +139,7 @@ STZEROES
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Billing.sol, 31
+.loc ../contracts/Billing.sol, 30
 GETGLOB 9
 GETGLOB 13
 DUP2

@@ -1,0 +1,828 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+ENDS
+PUSH S3
+.loc ../contracts/Operated.sol, 12
+ACCEPT
+.loc ../contracts/Operated.sol, 13
+SETGLOB 11
+.loc ../contracts/Auditor.sol, 35
+ROLL 3
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+NOT
+PUSH S3
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+NOT
+PUSH S3
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+NOT
+AND
+AND
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 36
+ACCEPT
+.loc ../contracts/Auditor.sol, 38
+ROT
+SETGLOB 12
+.loc ../contracts/Auditor.sol, 39
+SWAP
+SETGLOB 16
+.loc ../contracts/Auditor.sol, 40
+SETGLOB 17
+.loc ../contracts/Auditor.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setEmissionLimit
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Auditor.sol, 47
+LDU 256
+ENDS
+.loc ../contracts/Auditor.sol, 0
+CALLREF {
+	CALL $setEmissionLimit_de9daf91_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setEmissionLimit_de9daf91_internal
+.type	setEmissionLimit_de9daf91_internal, @function
+CALL $setEmissionLimit_de9daf91_internal_macro$
+
+.macro setEmissionLimit_de9daf91_internal_macro
+.loc ../contracts/Operated.sol, 16
+GETGLOB 9
+GETGLOB 11
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 48
+SETGLOB 14
+.loc ../contracts/Auditor.sol, 0
+
+.macro setHoldPercentage
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Auditor.sol, 54
+LDU 256
+ENDS
+.loc ../contracts/Auditor.sol, 0
+CALLREF {
+	CALL $setHoldPercentage_e26f21bf_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setHoldPercentage_e26f21bf_internal
+.type	setHoldPercentage_e26f21bf_internal, @function
+CALL $setHoldPercentage_e26f21bf_internal_macro$
+
+.macro setHoldPercentage_e26f21bf_internal_macro
+.loc ../contracts/Operated.sol, 16
+GETGLOB 9
+GETGLOB 11
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 56
+DUP
+LESSINT 101
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 58
+SETGLOB 15
+.loc ../contracts/Auditor.sol, 0
+
+.macro emission
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Auditor.sol, 65
+LDU 256
+ENDS
+.loc ../contracts/Auditor.sol, 0
+CALLREF {
+	CALL $emission_58292a3d_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	emission_58292a3d_internal
+.type	emission_58292a3d_internal, @function
+CALL $emission_58292a3d_internal_macro$
+
+.macro emission_58292a3d_internal_macro
+.loc ../contracts/Owned.sol, 22
+GETGLOB 9
+GETGLOB 10
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 67
+GETGLOB 13
+OVER
+ADD
+GETGLOB 13
+GEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 69
+GETGLOB 13
+OVER
+ADD
+DUP
+SETGLOB 13
+.loc ../contracts/Auditor.sol, 71
+GETGLOB 14
+LEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 74
+DUP
+GETGLOB 12
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 42045022170482489768618347945393405442362605719254
+STUR 167
+STU 256
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Auditor.sol, 77
+GETGLOB 15
+GTINT 0
+PUSHCONT {
+	.loc ../contracts/Auditor.sol, 78
+	DUP
+	GETGLOB 15
+	MUL
+	PUSHINT 100
+	DIV
+	.loc ../contracts/Auditor.sol, 79
+	DUP
+	GETGLOB 16
+	GETGLOB 12
+	NEWC
+	STSLICECONST x62_
+	STSLICE
+	PUSHINT 9789369574394656757036770681243717074945
+	STUR 135
+	ROTREV
+	NEWC
+	STSLICECONST x3141dda4
+	STSLICE
+	STU 256
+	STBREFR
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/Auditor.sol, 80
+	GETGLOB 16
+	NEWC
+	STSLICECONST x62_
+	STSLICE
+	PUSHINT 42045022170482489768618347945393405442362352285685
+	STUR 167
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/Auditor.sol, 0
+}
+IF
+.loc ../contracts/Auditor.sol, 0
+DROP
+
+.macro transfer
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Auditor.sol, 88
+LDU 256
+ENDS
+.loc ../contracts/Auditor.sol, 0
+CALLREF {
+	CALL $transfer_12514bba_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	transfer_12514bba_internal
+.type	transfer_12514bba_internal, @function
+CALL $transfer_12514bba_internal_macro$
+
+.macro transfer_12514bba_internal_macro
+.loc ../contracts/Owned.sol, 22
+GETGLOB 9
+GETGLOB 10
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Auditor.sol, 89
+GETGLOB 17
+GETGLOB 12
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 9789369574394656757036770681243717074945
+STUR 135
+ROTREV
+NEWC
+STSLICECONST x09234689
+STSLICE
+STU 256
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Auditor.sol, 0
+
+.macro setOwner
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Owned.sol, 16
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+ENDS
+.loc ../contracts/Owned.sol, 0
+CALLREF {
+	CALL $setOwner_13af4035_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setOwner_13af4035_internal
+.type	setOwner_13af4035_internal, @function
+CALL $setOwner_13af4035_internal_macro$
+
+.macro setOwner_13af4035_internal_macro
+.loc ../contracts/Owned.sol, 22
+GETGLOB 9
+GETGLOB 10
+SDEQ
+THROWIFNOT 100
+.loc ../contracts/Owned.sol, 17
+SETGLOB 10
+.loc ../contracts/Owned.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDU 256
+LDREF
+ENDS
+CTOS
+LDU 256
+LDU 256
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+ENDS
+SETGLOB 17
+SETGLOB 16
+SETGLOB 15
+SETGLOB 14
+SETGLOB 13
+SETGLOB 12
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	BLKPUSH 2, 0
+	PUSHINT 0
+	BLKPUSH 2, 0
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	DUP
+	SETGLOB 17
+	SETGLOB 16
+	SETGLOB 15
+	SETGLOB 14
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 17
+GETGLOB 16
+GETGLOB 15
+GETGLOB 14
+GETGLOB 13
+GETGLOB 12
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STSLICE
+ROLLREV 7
+NEWC
+STSLICE
+ROLLREV 6
+NEWC
+STSLICE
+STU 256
+ROLLREV 4
+NEWC
+STU 256
+STU 256
+ROTREV
+NEWC
+STSLICE
+SWAP
+NEWC
+STSLICE
+STBREFR
+STBREFR
+STBREFR
+STBREFR
+STBREFR
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+LDU 4 ; bounced tail
+LDMSGADDR ; bounced src tail
+DROP
+SETGLOB 9
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SETGLOB 9
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	ROT
+	GETGLOB 2
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+IF
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro owner
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 10
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000df0bcfde
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro operator
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 11
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000fe2032e1
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro token
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 12
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000e270cc50
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro emissionValue
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 13
+OVER
+PUSHCONT {
+	PUSHSLICE xc000000000000000000000000085646220
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro emissionLimit
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 14
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000b178eaa5
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro holdPercentage
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 15
+OVER
+PUSHCONT {
+	PUSHSLICE xc00000000000000000000000009902c4b2
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro insuranceHolder
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 16
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000c40a8a55
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro tokenOwner
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 17
+OVER
+PUSHCONT {
+	PUSHSLICE xc00000000000000000000000009073a27d
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro public_function_selector
+DUP
+PUSHINT 583900111
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 90464800
+	EQUAL
+	IFJMPREF {
+		CALL $emissionValue$
+	}
+	DUP
+	PUSHINT 276013693
+	EQUAL
+	IFJMPREF {
+		CALL $tokenOwner$
+	}
+	DUP
+	PUSHINT 419611826
+	EQUAL
+	IFJMPREF {
+		CALL $holdPercentage$
+	}
+	DUP
+	PUSHINT 583900111
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+}
+DUP
+PUSHINT 1344687830
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 830007973
+	EQUAL
+	IFJMPREF {
+		CALL $emissionLimit$
+	}
+	DUP
+	PUSHINT 1141541461
+	EQUAL
+	IFJMPREF {
+		CALL $insuranceHolder$
+	}
+	DUP
+	PUSHINT 1297248454
+	EQUAL
+	IFJMPREF {
+		CALL $setEmissionLimit$
+	}
+	DUP
+	PUSHINT 1344687830
+	EQUAL
+	IFJMPREF {
+		CALL $emission$
+	}
+}
+DUP
+PUSHINT 2048119792
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1594609630
+	EQUAL
+	IFJMPREF {
+		CALL $owner$
+	}
+	DUP
+	PUSHINT 1651559504
+	EQUAL
+	IFJMPREF {
+		CALL $token$
+	}
+	DUP
+	PUSHINT 1802285830
+	EQUAL
+	IFJMPREF {
+		CALL $setOwner$
+	}
+	DUP
+	PUSHINT 2048119792
+	EQUAL
+	IFJMPREF {
+		CALL $setHoldPercentage$
+	}
+}
+DUP
+PUSHINT 2116039393
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 2074246475
+	EQUAL
+	IFJMPREF {
+		CALL $transfer$
+	}
+	DUP
+	PUSHINT 2116039393
+	EQUAL
+	IFJMPREF {
+		CALL $operator$
+	}
+}
+
