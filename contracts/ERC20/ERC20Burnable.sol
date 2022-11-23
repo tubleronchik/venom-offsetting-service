@@ -12,7 +12,7 @@ contract ERC20Burnable is ERC20 {
      * @param _value amount of token values to emit
      * @notice owner balance will be increased by `_value`
      */
-    function emission(uint _value) public onlyOwner {
+    function emission(uint _value) public virtual onlyOwner {
         // Overflow check
         if (_value + totalSupply < totalSupply) revert();
 
