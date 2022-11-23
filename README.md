@@ -1,5 +1,9 @@
 # DAO-IPCI contracts for Everscale
 
+Install dependicies:
+```
+npm install
+```
 Generate account with following command:
 ```
 tonos-cli genphrase
