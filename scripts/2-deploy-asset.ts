@@ -1,4 +1,4 @@
-async function main() {
+export async function deployAsset() {
     const signer = (await locklift.keystore.getSigner("0"))!;
     const { contract: mito, tx } = await locklift.factory.deployContract({
       contract: "ERC20Burnable",
@@ -17,11 +17,4 @@ async function main() {
   
     console.log(`Mito token deployed at: ${mito.address.toString()}`);
   }
-  
-  main()
-    .then(() => process.exit(0))
-    .catch(e => {
-      console.log(e);
-      process.exit(1);
-    });
   
