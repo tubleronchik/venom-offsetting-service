@@ -23,3 +23,8 @@ Deploy contarcts:
 ```
 npx locklift run --network local --script scripts/<name-of-the-script>
 ```
+to deploy all contarcts:
+
+```
+npx locklift run --network local --script scripts/5-deploy-all.ts
+```
