@@ -1,11 +1,19 @@
 pragma ever-solidity >= 0.61.2;
 import './ERC20.sol';
+import '../ACL.sol';
 
 contract ERC20Burnable is ERC20 {
+
+    ACL public acl;
+    uint256 public lastEmissionValue;
+    address public lastAuditor;
     constructor(string _name, string _symbol, uint8 _decimals,
-                           uint _start_count) public
+                           uint _start_count, address _acl) public
              ERC20(_name, _symbol, _decimals, _start_count)
-    {tvm.accept();}
+    {
+        tvm.accept();
+        acl = ACL(_acl);
+    }
 
     /**
      * @dev Token emission
@@ -13,11 +21,19 @@ contract ERC20Burnable is ERC20 {
      * @notice owner balance will be increased by `_value`
      */
     function emission(uint _value) public virtual onlyOwner {
-        // Overflow check
-        if (_value + totalSupply < totalSupply) revert();
+        
+        acl.isAuditor{callback: onGetIsAuditor}(msg.sender);
+        lastEmissionValue = _value;
+        lastAuditor = msg.sender;
 
-        totalSupply     += _value;
-        balances[owner] += _value;
+    }
+
+    function onGetIsAuditor(bool isAuditor) public {
+        require(msg.sender == address(acl));
+        require(isAuditor);
+
+        totalSupply     += lastEmissionValue;
+        balances[lastAuditor] += lastEmissionValue;
     }
  
     /**
