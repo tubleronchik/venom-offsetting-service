@@ -9,6 +9,11 @@ contract Owned {
      */
     address public owner;
 
+    constructor() public {
+        tvm.accept();
+        owner = msg.sender;
+    }
+
     /**
      * @dev Delegate contract to another person
      * @param _owner New owner address 

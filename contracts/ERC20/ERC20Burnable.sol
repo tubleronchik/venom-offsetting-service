@@ -2,23 +2,26 @@ pragma ever-solidity >= 0.61.2;
 import './ERC20.sol';
 
 contract ERC20Burnable is ERC20 {
+
+    address auditor;
     constructor(string _name, string _symbol, uint8 _decimals,
-                           uint _start_count) public
+                           uint _start_count,address _auditor) public
              ERC20(_name, _symbol, _decimals, _start_count)
-    {tvm.accept();}
+    {
+        tvm.accept();
+        auditor = _auditor;
+    }
 
     /**
      * @dev Token emission
      * @param _value amount of token values to emit
      * @notice owner balance will be increased by `_value`
      */
-    function emission(uint _value) public virtual onlyOwner {
-        // Overflow check
-        if (_value + totalSupply < totalSupply) revert();
-
+    function emission(uint _value) public virtual onlyOwner {        
         totalSupply     += _value;
         balances[owner] += _value;
     }
+
  
     /**
      * @dev Burn the token values from sender balance and from total
