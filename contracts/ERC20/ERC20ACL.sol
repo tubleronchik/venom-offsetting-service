@@ -7,7 +7,7 @@ contract ERC20ACL is ERC20Burnable {
 
     constructor(string _name, string _symbol, uint8 _decimals,
                            uint _start_count, address _acl) public
-            ERC20Burnable(_name, _symbol, _decimals, _start_count, _acl)
+            ERC20Burnable(_name, _symbol, _decimals, _start_count)
     {tvm.accept();}
 
     function addMinter(address _minter) public onlyOwner {

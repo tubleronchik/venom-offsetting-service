@@ -3,13 +3,12 @@ import './ERC20.sol';
 
 contract ERC20Burnable is ERC20 {
 
-    address auditor;
+    uint256 static auditor;
     constructor(string _name, string _symbol, uint8 _decimals,
-                           uint _start_count,address _auditor) public
+                           uint _start_count) public
              ERC20(_name, _symbol, _decimals, _start_count)
     {
         tvm.accept();
-        auditor = _auditor;
     }
 
     /**
