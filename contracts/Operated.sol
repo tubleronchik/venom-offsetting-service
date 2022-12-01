@@ -1,5 +1,6 @@
 pragma ever-solidity >= 0.61.2;
 import './Owned.sol';
+
 contract Operated is Owned {
     // Contract operator
     address public operator;
