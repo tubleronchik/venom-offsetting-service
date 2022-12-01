@@ -71,7 +71,7 @@ contract TokenFactory is ITokenFactory {
         bool burnPaused,
         address remainingGasTo,
         bool upgradeable
-    ) external responsible override returns (address) {
+    ) public responsible virtual override returns (address) {
         tvm.rawReserve(address(this).balance - msg.value, 0);
         function (uint256, string, string, uint8, address) returns (TvmCell) buildStateInit =
             upgradeable ? _buildUpgradeableStateInit : _buildCommonStateInit;
