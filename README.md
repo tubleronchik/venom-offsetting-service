@@ -1,5 +1,12 @@
 # DAO-IPCI contracts for Everscale
 
+Install `everdev` and `tonos-cli`:
+
+```
+npm i -g everdev
+everdev tonos-cli install
+```
+
 Install dependicies:
 ```
 npm install
@@ -14,9 +21,21 @@ Building contracts:
 ```
 npx locklift build
 ```
+To work with local network use Everscale Simple Emulator. To launch and stop it run:
+
+```
+everdev se start
+everdev se stop
+```
+respectively.
+To reset the network run
+```
+everdev se reset
+```
+
 Test contracts:
 ```
-npx locklift test --networklocal
+npx locklift test --network local
 ```
 
 Deploy contarcts:
