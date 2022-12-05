@@ -5,6 +5,8 @@ pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
 import 'TIP3/additional/TokenFactory.sol';
+import "locklift/src/console.sol";
+
 
 contract AssetFactory is TokenFactory {
     mapping(address => bool) private _isAuditor;
@@ -62,6 +64,6 @@ contract AssetFactory is TokenFactory {
             upgradeable
         );
 
-        return {value: 0, flag: TokenMsgFlag.REMAINING_GAS, bounce: false} root;
+        return {value: 0, flag: 128, bounce: false} root;
     }
 }
