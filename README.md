@@ -1,14 +1,19 @@
 # DAO-IPCI contracts for Everscale
 
 Install `everdev` and `tonos-cli`:
-
+> Everdev must be installed globally.
 ```
 npm i -g everdev
 everdev tonos-cli install
 ```
+> **Troubleshooting**: if you get `EACCES permissions errors` error check this [article](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+---
 
-Install dependicies:
+Clone the repo and install dependicies:
+
 ```
+git clone https://github.com/Multi-Agent-io/dao-ipci-everscale
+cd dao-ipci-everscale
 npm install
 ```
 Generate account with following command:
