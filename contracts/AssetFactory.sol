@@ -4,36 +4,46 @@ pragma ever-solidity ^0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
-import 'TIP3/additional/TokenFactory.sol';
-import "locklift/src/console.sol";
+import 'TIP3/additional/TokenFactory.sol'; //модифицированный TokenFactory от Broxus
+//В своем коде он использует TokenRoot. В Everscale токены принято делать такими, чтобы не было глобального
+// mapping(address => uint) balances, потому что storage тут не бесплатен. Вместо этого для каждого владельца токена
+// деплоится TokenWallet. TokenWallet предоставляет API для пользователя(transfer(), burn() и т.д.)
 
 
+//AssetFactory - это просто TokenFactory с вайтлистом. Создавать токены (деплоить TokenRoot) могут только аудиторы
 contract AssetFactory is TokenFactory {
-    mapping(address => bool) private _isAuditor;
+    mapping(address => bool) private _isAuditor; //Вайтлист аудиторов
 
 
+    //просто прокидываю все аргументы в TokenFactory
     constructor(
-        address owner,
-        uint128 deployValue,
-        TvmCell rootCode,
-        TvmCell walletCode,
-        TvmCell rootUpgradeableCode,
-        TvmCell walletUpgradeableCode,
+        address owner, //владелец DAO
+        uint128 deployValue, //количество EVER, с которым будет деплоится токен (TokenRoot)
+        TvmCell rootCode, //код контракта TokenRoot
+        TvmCell walletCode, //код кошелька токена (TokenWallet)
+        TvmCell rootUpgradeableCode, //код upgradable версии TokenRoot
+        TvmCell walletUpgradeableCode, //код upgradable версии TokenWallet
         TvmCell platformCode
     ) public TokenFactory(owner, deployValue, rootCode, walletCode, rootUpgradeableCode, walletUpgradeableCode, platformCode) {}
 
 
+    //view функция для проверки, является ли определнный адрес аудитором
     function isAuditor(address auditor) public view responsible returns(bool) {
         return{value: 0, bounce: false, flag: 64} _isAuditor[auditor];
     }
+
+    //Добавить аудитора. Делать это может только Owner aka Оператор
     function addAuditor(address auditor) public onlyOwner {
         _isAuditor[auditor] = true;
     }
 
+    //Удалить аудитора. Аналогично, функция только для Owner'a (Оператора)
     function removeAuditor(address auditor) public onlyOwner {
         _isAuditor[auditor] = false;
     }
 
+    //Функция деплоя токена. То же самое, что deployRoot в TokenFactory, но перед деплоем проврека на то,
+    //является ли msg.sender аудитором.
     function deployRoot(
         string name,
         string symbol,
