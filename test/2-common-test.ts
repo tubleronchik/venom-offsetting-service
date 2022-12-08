@@ -16,7 +16,7 @@ let userTokenWallet: Contract<FactorySource['TokenWallet']>;
 
 const zeroAddress = new Address('0:0000000000000000000000000000000000000000000000000000000000000000');
 
-describe("Test Sample contract", async function () {
+describe("Prepare wallets", async function () {
   before(async () => {
     operator = (await locklift.keystore.getSigner("0"))!;
     operatorWallet = await WalletV3Account.fromPubkey({publicKey: operator.publicKey, workchain: 0});
@@ -29,7 +29,7 @@ describe("Test Sample contract", async function () {
     userWallet = await WalletV3Account.fromPubkey({publicKey: user.publicKey, workchain: 0});
     await locklift.giver.sendTo(userWallet.address, locklift.utils.toNano(100));          
 });
-  describe("Contracts", async function () {
+  describe("Test AssetFactory contract", async function () {
     it("Operator should deploy his own DAO", async function () {
         const tokenWallet = locklift.factory.getContractArtifacts("TokenWallet");
         const tokenRoot = locklift.factory.getContractArtifacts("TokenRoot");
@@ -94,15 +94,13 @@ describe("Test Sample contract", async function () {
         });
 
         console.log(`Token root deployed at ${decoded_events[0].data.root}`);
-
         const tokenRoot = locklift.factory.getDeployedContract("TokenRoot", decoded_events[0].data.root);
         token = tokenRoot;
         const tokenWalletAddress = (await tokenRoot.methods.walletOf({answerId: 0, walletOwner: userWallet.address}).call()).value0;
         const TokenWallet = locklift.factory.getDeployedContract('TokenWallet', tokenWalletAddress);
         userTokenWallet = TokenWallet;
-
+      
         const {value0: tokenWalletBalance} = await userTokenWallet.methods.balance({ answerId: 0 }).call();
-
         console.log(`User token balance is ${tokenWalletBalance}`);
         expect(Number(tokenWalletBalance)).to.equals(50 * 10 ** 9);
     });
@@ -123,7 +121,6 @@ describe("Test Sample contract", async function () {
 
     it("User may burn sume tokens", async function () {
         await locklift.factory.accounts.storage.addAccount(userWallet);
-
         let tx = await userTokenWallet.methods.burn({
             amount: 15 * 10 ** 9,
             remainingGasTo: userWallet.address,
