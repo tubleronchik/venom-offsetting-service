@@ -43,12 +43,7 @@ Test contracts:
 npx locklift test --network local
 ```
 
-Deploy contarcts:
+Deploy AssetFactory:
 ```
-npx locklift run --network local --script scripts/<name-of-the-script>
-```
-to deploy all contarcts:
-
-```
-npx locklift run --network local --script scripts/5-deploy-all.ts
+npx locklift run --network local --script scripts/1-deploy-assetFactory.ts
 ```
