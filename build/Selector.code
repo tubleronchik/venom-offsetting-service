@@ -1,0 +1,1192 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 29
+ACCEPT
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro calculateAcceptTransferSelector
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 32
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateAcceptTransferSelector_79aeb768_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3801136158
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateAcceptTransferSelector_79aeb768_internal
+.type	calculateAcceptTransferSelector_79aeb768_internal, @function
+CALL $calculateAcceptTransferSelector_79aeb768_internal_macro$
+
+.macro calculateAcceptTransferSelector_79aeb768_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 34
+PUSHINT 1738586464
+DEC
+UFITS 32
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateAcceptMintSelector
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 37
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateAcceptMintSelector_891babd7_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2513565863
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateAcceptMintSelector_891babd7_internal
+.type	calculateAcceptMintSelector_891babd7_internal, @function
+CALL $calculateAcceptMintSelector_891babd7_internal_macro$
+
+.macro calculateAcceptMintSelector_891babd7_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 39
+PUSHINT 1132786329
+DEC
+UFITS 32
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateAcceptBurnSelector
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 42
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateAcceptBurnSelector_5a2e482b_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2667991752
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateAcceptBurnSelector_5a2e482b_internal
+.type	calculateAcceptBurnSelector_5a2e482b_internal, @function
+CALL $calculateAcceptBurnSelector_5a2e482b_internal_macro$
+
+.macro calculateAcceptBurnSelector_5a2e482b_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 44
+PUSHINT 422269362
+DEC
+UFITS 32
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTIP3TokenRootInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 47
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTIP3TokenRootInterfaceID_ad92399b_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2804114079
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTIP3TokenRootInterfaceID_ad92399b_internal
+.type	calculateTIP3TokenRootInterfaceID_ad92399b_internal, @function
+CALL $calculateTIP3TokenRootInterfaceID_ad92399b_internal_macro$
+
+.macro calculateTIP3TokenRootInterfaceID_ad92399b_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 50
+PUSHINT 428082246
+PUSHINT 394429597
+XOR
+PUSHINT 1394526076
+XOR
+PUSHINT 1629421668
+XOR
+PUSHINT 1717423775
+XOR
+CALLREF {
+	CALL $calculateAcceptBurnSelector_5a2e482b_internal_macro$
+}
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTIP3TokenWalletInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 59
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTIP3TokenWalletInterfaceID_d002eed8_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3685852466
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTIP3TokenWalletInterfaceID_d002eed8_internal
+.type	calculateTIP3TokenWalletInterfaceID_d002eed8_internal, @function
+CALL $calculateTIP3TokenWalletInterfaceID_d002eed8_internal_macro$
+
+.macro calculateTIP3TokenWalletInterfaceID_d002eed8_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 62
+PUSHINT 1146569348
+PUSHINT 1231640703
+XOR
+PUSHINT 1717423775
+XOR
+CALLREF {
+	CALL $calculateAcceptTransferSelector_79aeb768_internal_macro$
+}
+XOR
+CALLREF {
+	CALL $calculateAcceptMintSelector_891babd7_internal_macro$
+}
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateSIDInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 69
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateSIDInterfaceID_6facd142_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 4049707397
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateSIDInterfaceID_6facd142_internal
+.type	calculateSIDInterfaceID_6facd142_internal, @function
+CALL $calculateSIDInterfaceID_6facd142_internal_macro$
+
+.macro calculateSIDInterfaceID_6facd142_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 72
+PUSHINT 839183401
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateVersionedInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 75
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateVersionedInterfaceID_194a2410_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3405818790
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateVersionedInterfaceID_194a2410_internal
+.type	calculateVersionedInterfaceID_194a2410_internal, @function
+CALL $calculateVersionedInterfaceID_194a2410_internal_macro$
+
+.macro calculateVersionedInterfaceID_194a2410_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 78
+PUSHINT 322087217
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTokenRootInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 81
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTokenRootInterfaceID_c4a74ab3_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3772809560
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTokenRootInterfaceID_c4a74ab3_internal
+.type	calculateTokenRootInterfaceID_c4a74ab3_internal, @function
+CALL $calculateTokenRootInterfaceID_c4a74ab3_internal_macro$
+
+.macro calculateTokenRootInterfaceID_c4a74ab3_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 84
+PUSHINT 911978585
+PUSHINT 739640645
+XOR
+PUSHINT 549434296
+XOR
+PUSHINT 837670087
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTokenWalletInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 92
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTokenWalletInterfaceID_62436339_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2883900535
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTokenWalletInterfaceID_62436339_internal
+.type	calculateTokenWalletInterfaceID_62436339_internal, @function
+CALL $calculateTokenWalletInterfaceID_62436339_internal_macro$
+
+.macro calculateTokenWalletInterfaceID_62436339_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 95
+PUSHINT 520172177
+PUSHINT 1944199491
+XOR
+PUSHINT 1185535980
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateBurnableTokenWalletInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 102
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateBurnableTokenWalletInterfaceID_44874015_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3239880312
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateBurnableTokenWalletInterfaceID_44874015_internal
+.type	calculateBurnableTokenWalletInterfaceID_44874015_internal, @function
+CALL $calculateBurnableTokenWalletInterfaceID_44874015_internal_macro$
+
+.macro calculateBurnableTokenWalletInterfaceID_44874015_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 105
+PUSHINT 1445284013
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateBurnableByRootTokenRootInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 108
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateBurnableByRootTokenRootInterfaceID_0d2933bb_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2523138051
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateBurnableByRootTokenRootInterfaceID_0d2933bb_internal
+.type	calculateBurnableByRootTokenRootInterfaceID_0d2933bb_internal, @function
+CALL $calculateBurnableByRootTokenRootInterfaceID_0d2933bb_internal_macro$
+
+.macro calculateBurnableByRootTokenRootInterfaceID_0d2933bb_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 111
+PUSHINT 211314732
+PUSHINT 1519307959
+XOR
+PUSHINT 1323395199
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateBurnableByRootTokenWalletInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 118
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateBurnableByRootTokenWalletInterfaceID_6bf99922_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2991653104
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateBurnableByRootTokenWalletInterfaceID_6bf99922_internal
+.type	calculateBurnableByRootTokenWalletInterfaceID_6bf99922_internal, @function
+CALL $calculateBurnableByRootTokenWalletInterfaceID_6bf99922_internal_macro$
+
+.macro calculateBurnableByRootTokenWalletInterfaceID_6bf99922_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 121
+PUSHINT 204468749
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateDestroyableInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 124
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateDestroyableInterfaceID_b3d27f0f_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3196232111
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateDestroyableInterfaceID_b3d27f0f_internal
+.type	calculateDestroyableInterfaceID_b3d27f0f_internal, @function
+CALL $calculateDestroyableInterfaceID_b3d27f0f_internal_macro$
+
+.macro calculateDestroyableInterfaceID_b3d27f0f_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 127
+PUSHINT 251812010
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateDisableableMintTokenRootInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 130
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateDisableableMintTokenRootInterfaceID_b02ac966_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3822484310
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateDisableableMintTokenRootInterfaceID_b02ac966_internal
+.type	calculateDisableableMintTokenRootInterfaceID_b02ac966_internal, @function
+CALL $calculateDisableableMintTokenRootInterfaceID_b02ac966_internal_macro$
+
+.macro calculateDisableableMintTokenRootInterfaceID_b02ac966_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 133
+PUSHINT 2094753589
+PUSHINT 2085541327
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTransferableOwnershipInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 139
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTransferableOwnershipInterfaceID_ab5e5e01_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2624662358
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTransferableOwnershipInterfaceID_ab5e5e01_internal
+.type	calculateTransferableOwnershipInterfaceID_ab5e5e01_internal, @function
+CALL $calculateTransferableOwnershipInterfaceID_ab5e5e01_internal_macro$
+
+.macro calculateTransferableOwnershipInterfaceID_ab5e5e01_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 142
+PUSHINT 502498758
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateBurnPausableTokenRootInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 147
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateBurnPausableTokenRootInterfaceID_937b344b_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 4236888929
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateBurnPausableTokenRootInterfaceID_937b344b_internal
+.type	calculateBurnPausableTokenRootInterfaceID_937b344b_internal, @function
+CALL $calculateBurnPausableTokenRootInterfaceID_937b344b_internal_macro$
+
+.macro calculateBurnPausableTokenRootInterfaceID_937b344b_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 150
+PUSHINT 2146356303
+PUSHINT 975694363
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTokenWalletUpgradeableInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 156
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTokenWalletUpgradeableInterfaceID_c660fac3_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2856122551
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTokenWalletUpgradeableInterfaceID_c660fac3_internal
+.type	calculateTokenWalletUpgradeableInterfaceID_c660fac3_internal, @function
+CALL $calculateTokenWalletUpgradeableInterfaceID_c660fac3_internal_macro$
+
+.macro calculateTokenWalletUpgradeableInterfaceID_c660fac3_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 159
+PUSHINT 8748794
+PUSHINT 2104488532
+XOR
+PUSHINT 53907865
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro calculateTokenRootUpgradeableInterfaceID
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/TIP3/additional/Selector.sol, 166
+ENDS
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+CALLREF {
+	CALL $calculateTokenRootUpgradeableInterfaceID_e87f9183_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2629863096
+	STUR 130
+	STU 32
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	calculateTokenRootUpgradeableInterfaceID_e87f9183_internal
+.type	calculateTokenRootUpgradeableInterfaceID_e87f9183_internal, @function
+CALL $calculateTokenRootUpgradeableInterfaceID_e87f9183_internal_macro$
+
+.macro calculateTokenRootUpgradeableInterfaceID_e87f9183_internal_macro
+.loc ../contracts/TIP3/additional/Selector.sol, 169
+PUSHINT 1172038416
+PUSHINT 8748794
+XOR
+PUSHINT 352169376
+XOR
+PUSHINT 1911415692
+XOR
+PUSHINT 388172858
+XOR
+.loc ../contracts/TIP3/additional/Selector.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDU 256
+ENDS
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHINT 1
+	OVER
+	PUSHINT 64
+	DICTUGET
+	ZEROSWAPIFNOT
+	PUSHCONT {
+		PLDU 256
+	}
+	IF
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STU 256
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+PLDU 4
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	ROT
+	GETGLOB 2
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+IF
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro public_function_selector
+DUP
+PUSHINT 1675000662
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 482379448
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 366082215
+		EQUAL
+		IFJMPREF {
+			CALL $calculateAcceptMintSelector$
+		}
+		DUP
+		PUSHINT 375654403
+		EQUAL
+		IFJMPREF {
+			CALL $calculateBurnableByRootTokenRootInterfaceID$
+		}
+		DUP
+		PUSHINT 477178710
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTransferableOwnershipInterfaceID$
+		}
+		DUP
+		PUSHINT 482379448
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTokenRootUpgradeableInterfaceID$
+		}
+	}
+	DUP
+	PUSHINT 736416887
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 520508104
+		EQUAL
+		IFJMPREF {
+			CALL $calculateAcceptBurnSelector$
+		}
+		DUP
+		PUSHINT 656630431
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTIP3TokenRootInterfaceID$
+		}
+		DUP
+		PUSHINT 708638903
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTokenWalletUpgradeableInterfaceID$
+		}
+		DUP
+		PUSHINT 736416887
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTokenWalletInterfaceID$
+		}
+	}
+	DUP
+	PUSHINT 1258335142
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 844169456
+		EQUAL
+		IFJMPREF {
+			CALL $calculateBurnableByRootTokenWalletInterfaceID$
+		}
+		DUP
+		PUSHINT 1048748463
+		EQUAL
+		IFJMPREF {
+			CALL $calculateDestroyableInterfaceID$
+		}
+		DUP
+		PUSHINT 1092396664
+		EQUAL
+		IFJMPREF {
+			CALL $calculateBurnableTokenWalletInterfaceID$
+		}
+		DUP
+		PUSHINT 1258335142
+		EQUAL
+		IFJMPREF {
+			CALL $calculateVersionedInterfaceID$
+		}
+	}
+	DUP
+	PUSHINT 1675000662
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 1538368818
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTIP3TokenWalletInterfaceID$
+		}
+		DUP
+		PUSHINT 1625325912
+		EQUAL
+		IFJMPREF {
+			CALL $calculateTokenRootInterfaceID$
+		}
+		DUP
+		PUSHINT 1653652510
+		EQUAL
+		IFJMPREF {
+			CALL $calculateAcceptTransferSelector$
+		}
+		DUP
+		PUSHINT 1675000662
+		EQUAL
+		IFJMPREF {
+			CALL $calculateDisableableMintTokenRootInterfaceID$
+		}
+	}
+}
+DUP
+PUSHINT 2089405281
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1756716863
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 1902223749
+	EQUAL
+	IFJMPREF {
+		CALL $calculateSIDInterfaceID$
+	}
+	DUP
+	PUSHINT 2089405281
+	EQUAL
+	IFJMPREF {
+		CALL $calculateBurnPausableTokenRootInterfaceID$
+	}
+}
+
