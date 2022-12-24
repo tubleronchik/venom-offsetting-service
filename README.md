@@ -57,3 +57,7 @@ npx locklift run --network local --script scripts/1-deploy-assetFactory.ts
 > 0:8378231949d0945553926f0fd4798c48bcfb4343bea528b6f6383e6bd1b8e4ba
 #### Asset
 > 0:d3a9051e2dfef4ff7effcb4aa42db2a9d8b8415cc2214e53b1a3e0f97195d444
+---
+### Contracts on Mainnet
+#### AssetFactory
+> 0:e54c6a9817b5c5a24fd3496cbaa0aefa7dc6a59cf8e3f896f5567029626ce459
