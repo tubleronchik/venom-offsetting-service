@@ -4,6 +4,7 @@ import { WalletV3Account} from "everscale-standalone-client/nodejs";
 
 export async function deployAssetFactory() {
     const signer = (await locklift.keystore.getSigner("0"))!;
+    console.log(signer)
     const tokenRoot = await locklift.factory.getContractArtifacts("TokenRoot");
     const tokenWallet = await locklift.factory.getContractArtifacts("TokenWallet");
     const wallet = await WalletV3Account.fromPubkey({publicKey: signer.publicKey, workchain: 0});

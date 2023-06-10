@@ -15,19 +15,19 @@ let token: Contract<FactorySource['TokenRoot']>;
 let userTokenWallet: Contract<FactorySource['TokenWallet']>;
 
 const zeroAddress = new Address('0:0000000000000000000000000000000000000000000000000000000000000000');
-
 describe("Prepare wallets", async function () {
   before(async () => {
     operator = (await locklift.keystore.getSigner("0"))!;
     operatorWallet = await WalletV3Account.fromPubkey({publicKey: operator.publicKey, workchain: 0});
     await locklift.factory.accounts.storage.addAccount(operatorWallet);
-    await locklift.giver.sendTo(operatorWallet.address, locklift.utils.toNano(100));
+    await locklift.giver.sendTo(operatorWallet.address, locklift.utils.toNano(30));
     auditor = (await locklift.keystore.getSigner("1"))!;
     auditorWallet = await WalletV3Account.fromPubkey({publicKey: auditor.publicKey, workchain: 0});
-    await locklift.giver.sendTo(auditorWallet.address, locklift.utils.toNano(100));  
+    await locklift.giver.sendTo(auditorWallet.address, locklift.utils.toNano(10));  
+    
     user = (await locklift.keystore.getSigner("3"))!;
     userWallet = await WalletV3Account.fromPubkey({publicKey: user.publicKey, workchain: 0});
-    await locklift.giver.sendTo(userWallet.address, locklift.utils.toNano(100));          
+    await locklift.giver.sendTo(userWallet.address, locklift.utils.toNano(10));        
 });
   describe("Test AssetFactory contract", async function () {
     it("Operator should deploy his own DAO", async function () {
@@ -83,16 +83,13 @@ describe("Prepare wallets", async function () {
             remainingGasTo: auditorWallet.address,
             upgradeable: false
         }).send({from: auditorWallet.address, amount: locklift.utils.toNano(4)});
-
         let sub = new locklift.provider.Subscriber();
         let deploy_tx = await sub.trace(tx).filter(tx_in_tree => {
             return tx_in_tree.account._address == factory.address.toString()
         }).first();
-
         let decoded_events = await factory.decodeTransactionEvents({
             transaction: deploy_tx!,
         });
-
         console.log(`Token root deployed at ${decoded_events[0].data.root}`);
         const tokenRoot = locklift.factory.getDeployedContract("TokenRoot", decoded_events[0].data.root);
         token = tokenRoot;

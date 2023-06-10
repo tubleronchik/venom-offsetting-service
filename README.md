@@ -1,5 +1,51 @@
-# DAO-IPCI contracts for Everscale
+# Offsetting Service on Venom network
 
+Simple Offsetting service that helps individuals or organizations reduce their carbon footprint by compensating for their greenhouse gas emissions using blockchain. The following roles are used: 
+
+- An operator who deploys his DAO and adds auditors
+- An auditor who has the right to issue and transfer assets to the user’s address
+- A user who has the right to request the issuance of a asset by providing the confirmations necessary for the issuance of green assets
+
+Additionally, an off-chain agent for auditors is implemented using IPFS Pubsub. This agent verifies user confirmations and mints the corresponding number of tokens accordingly.
+
+---
+## Contracts on Devnet
+#### AssetFactory
+> 0:215a4e1213cd87bc23108499742a26d16fb09f8fbf02069ec0d8d5aeb0bf73a1
+#### Auditor
+> 0:f6f50e7e2100cd4cb07e21eb5bc23585fa526e06fdfc7ba65372614a07870943
+#### User
+> 0:a9c8f49066d5bbc74f8df600406b5d47ca0601977b2159a58a24d0fb20ce26fa
+#### Asset
+> 0:b2e2b1c948b5764eb2f48254d222269444041b2a5f00619f62b681aafde1e861
+
+---
+## Demo of the project
+
+You can find a demo video showcasing the functionality of the service [here](https://youtu.be/LknMbSvtj1c).
+
+---
+
+## Scenario
+
+#### Beginning
+1. Operator creates a wallet on the Venom network
+2. Operator creates its own DAO by deploying the `AssetFactory` contract
+3. Operator adds to the whitelist (inside `AssetFactory` `addAuditor()` function) auditors.
+
+#### Issue of a New Asset
+1. `User` (regular wallet) chooses an auditor off-chain, asks the `Auditor` to create an asset.
+2. `User` and `Auditor` off-chain agree on the parameters of the asset (initial emission, asset name, symbol).
+3. `Auditor` creates an asset through the factory (calls `deployRoot()` in the `AssetFactory` contract).
+4. `Auditor` transfers the initial issue to the `User`.
+
+#### Next Steps
+- `User` have the ability to offset their carbon footprint by burning assets.
+- As `User` produces green energy, he can agree with the `Auditor` on the proportional issue of tokens to User’s account.
+
+---
+
+## Testing on Local Node
 Install `everdev` and `tonos-cli`:
 > Everdev must be installed globally.
 ```
@@ -47,17 +93,3 @@ Deploy AssetFactory:
 ```
 npx locklift run --network local --script scripts/1-deploy-assetFactory.ts
 ```
----
-### Contracts on Devnet
-#### AssetFactory
-> 0:05e30bf3eae57adf9f5b6e45d4f55ffbb0dbf6e9b8d7441a67167631ce2675eb
-#### Auditor
-> 0:22d976b931c4686dc1eba73bf72dfb618bdf869b5bac77c0025af7917a3571db
-#### User
-> 0:8378231949d0945553926f0fd4798c48bcfb4343bea528b6f6383e6bd1b8e4ba
-#### Asset
-> 0:d3a9051e2dfef4ff7effcb4aa42db2a9d8b8415cc2214e53b1a3e0f97195d444
----
-### Contracts on Mainnet
-#### AssetFactory
-> 0:e54c6a9817b5c5a24fd3496cbaa0aefa7dc6a59cf8e3f896f5567029626ce459

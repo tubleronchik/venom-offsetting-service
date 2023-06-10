@@ -9,7 +9,6 @@ import 'TIP3/additional/TokenFactory.sol'; //модифицированный To
 // mapping(address => uint) balances, потому что storage тут не бесплатен. Вместо этого для каждого владельца токена
 // деплоится TokenWallet. TokenWallet предоставляет API для пользователя(transfer(), burn() и т.д.)
 
-
 //AssetFactory - это просто TokenFactory с вайтлистом. Создавать токены (деплоить TokenRoot) могут только аудиторы
 contract AssetFactory is TokenFactory {
     mapping(address => bool) private _isAuditor; //Вайтлист аудиторов
